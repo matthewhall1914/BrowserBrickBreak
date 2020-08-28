@@ -1,0 +1,12 @@
+backgrounds
+
+https://opengameart.org/content/seamless-desert-background-in-parts
+https://opengameart.org/content/tiling-background-pack-sky
+https://opengameart.org/content/seamless-cave-background
+https://opengameart.org/content/living-tissue-background
+
+walls
+https://opengameart.org/content/seamless-2d-graveyard-background
+
+font
+https://www.1001fonts.com/digitaldrip-font.html

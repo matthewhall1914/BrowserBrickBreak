@@ -1,0 +1,187 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://desert_6.png" type="Texture" id=2]
+[ext_resource path="res://Paddle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Brick.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/digitaldrip/Anti.biz_DigitalDrip_TTF.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/digitaldrip/Anti.biz_DigitalDrip_OTF.otf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 42
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 36
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 38
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 36
+font_data = ExtResource( 5 )
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="bckgrnd" type="Sprite" parent="."]
+position = Vector2( 954.205, 1016.31 )
+rotation = -6.2771
+scale = Vector2( 1.06443, 1.54851 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="UI" type="Node" parent="."]
+
+[node name="Lives" type="Label" parent="UI"]
+margin_left = 714.028
+margin_top = 689.879
+margin_right = 866.028
+margin_bottom = 724.879
+size_flags_stretch_ratio = 0.0
+custom_fonts/font = SubResource( 1 )
+text = "LIVES: 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="UI"]
+margin_left = 718.302
+margin_top = 654.562
+margin_right = 903.302
+margin_bottom = 690.562
+custom_fonts/font = SubResource( 2 )
+text = "SCORE : 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Victory" type="Label" parent="UI"]
+margin_left = 322.438
+margin_top = 267.445
+margin_right = 613.438
+margin_bottom = 298.445
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.368627, 0.823529, 0.662745, 1 )
+text = "A WINNER IS YOU!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Defeat" type="Label" parent="UI"]
+margin_left = 407.906
+margin_top = 265.978
+margin_right = 525.906
+margin_bottom = 299.978
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.898039, 0.0941176, 0.0941176, 1 )
+text = "U LOSE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Total Score" type="Label" parent="UI"]
+margin_left = 354.253
+margin_top = 300.463
+margin_right = 565.253
+margin_bottom = 331.463
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "TOTAL SCORE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paddle" parent="." instance=ExtResource( 3 )]
+
+[node name="Anchor" type="Position2D" parent="Paddle"]
+position = Vector2( -0.108002, 9.82263 )
+scale = Vector2( 0.910034, 0.5 )
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2( -48.7797, -6.53186 )
+scale = Vector2( 2.10997, 1 )
+polygon = PoolVector2Array( 478.106, 727.148, 513.701, 727.346, 501.827, -40.9379, 0.764423, -64.3205, -23.7742, 384.959, -22.1911, 718.995, 22.8994, 732.7, 20.5532, 2.47266, 479.361, 7.60195 )
+
+[node name="Bricks1" type="Node2D" parent="."]
+position = Vector2( -2.51624, -0.515884 )
+
+[node name="Brick17" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 227.334, 123.568 )
+
+[node name="Brick18" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 291.554, 122.498 )
+
+[node name="Brick19" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 115.947, 156.674 )
+
+[node name="Brick28" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 635.264, 120.86 )
+
+[node name="Brick27" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 704.899, 138.743 )
+
+[node name="Brick26" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 571.709, 119.672 )
+
+[node name="Brick20" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 295.158, 434.769 )
+
+[node name="Brick29" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 228.688, 433.059 )
+
+[node name="Brick30" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 426.123, 436.549 )
+
+[node name="Brick31" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 493.178, 407.911 )
+
+[node name="Brick32" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 566.003, 273.096 )
+
+[node name="Brick33" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 700.475, 271.292 )
+
+[node name="Brick34" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 631.885, 242.412 )
+
+[node name="Brick36" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 633.69, 299.269 )
+
+[node name="Brick37" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 275.398, 264.974 )
+
+[node name="Brick38" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 143.633, 264.072 )
+
+[node name="Brick39" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 206.808, 236.997 )
+
+[node name="Brick35" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 209.516, 292.049 )
+
+[node name="Brick21" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 633.172, 271.321 )
+
+[node name="Brick22" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 208.47, 264.471 )
+
+[node name="Brick23" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 169.199, 126.576 )
+
+[node name="Brick25" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 510.344, 120.259 )
+
+[node name="Brick24" parent="Bricks1" instance=ExtResource( 4 )]
+position = Vector2( 365.711, 452.803 )
+[connection signal="input_event" from="Paddle" to="Paddle" method="_on_Paddle_input_event"]
